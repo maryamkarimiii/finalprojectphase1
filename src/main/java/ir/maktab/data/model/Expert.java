@@ -16,4 +16,5 @@ public class Expert extends User {
     ExpertRegistrationStatus expertRegistrationStatus = ExpertRegistrationStatus.NEW;
     @Lob
     byte[] image;
+    Double expertTotalScore;
 }
