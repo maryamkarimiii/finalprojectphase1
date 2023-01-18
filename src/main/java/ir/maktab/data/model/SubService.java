@@ -14,7 +14,7 @@ public class SubService {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    Long baseAmount;
+    Double baseAmount;
     String description;
     @ManyToOne
     Service service;
