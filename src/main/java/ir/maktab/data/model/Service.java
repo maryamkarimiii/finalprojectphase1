@@ -16,8 +16,6 @@ public class Service {
     Long id;
     @Column(unique = true)
     String name;
-    @OneToMany(mappedBy = "service")
-    Set<SubService> subServiceSet;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;
 }
