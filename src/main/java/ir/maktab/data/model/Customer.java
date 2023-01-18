@@ -6,6 +6,4 @@ import java.util.Set;
 
 @Entity
 public class Customer extends User {
-//    @OneToMany
-//    Set<Address> address;
 }

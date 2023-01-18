@@ -23,4 +23,6 @@ public class Suggestion {
     Double price;
     Date startWorking;
     Duration duration;
+    @Column(columnDefinition = "boolean default false")
+    boolean isDeleted;
 }

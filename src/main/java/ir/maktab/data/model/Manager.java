@@ -1,6 +1,6 @@
 package ir.maktab.data.model;
 
-import ir.maktab.data.enums.UserRole;
+import ir.maktab.data.enums.Role;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -17,7 +17,7 @@ public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    UserRole userRole;
+    Role role;
     String fullName;
     String username;
     String password;

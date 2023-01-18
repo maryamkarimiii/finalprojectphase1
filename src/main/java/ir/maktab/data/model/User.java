@@ -1,6 +1,6 @@
 package ir.maktab.data.model;
 
-import ir.maktab.data.enums.UserRole;
+import ir.maktab.data.enums.Role;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -17,7 +17,7 @@ public abstract class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Enumerated(EnumType.STRING)
-    UserRole userRole;
+    Role role;
     String firstName;
     String lastName;
     @Column(unique = true, length = 11, nullable = false)
@@ -27,7 +27,7 @@ public abstract class User {
     @Temporal(TemporalType.DATE)
     @CreationTimestamp
     Date registerDate;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Wallet wallet;
     @Column(unique = true)
     String username;
