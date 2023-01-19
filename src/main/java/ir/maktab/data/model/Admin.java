@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Entity
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Manager {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
