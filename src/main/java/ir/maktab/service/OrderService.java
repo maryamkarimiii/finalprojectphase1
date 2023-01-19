@@ -11,9 +11,5 @@ public interface OrderService extends BaseService<Order> {
 
     void validateOrderDate(Order order);
 
-    List<Service> seeServicesToChose();
-
-    List<SubService> seeSubServicesToChose(Service service);
-
     void softDelete(Order order);
 }
