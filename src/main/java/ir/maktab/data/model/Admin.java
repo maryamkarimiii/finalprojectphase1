@@ -5,10 +5,7 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -17,8 +14,12 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Enumerated(EnumType.STRING)
     Role role;
     String fullName;
+    @Column(unique = true)
     String username;
     String password;
+    @Column(columnDefinition = "boolean default false")
+    boolean isDeleted;
 }

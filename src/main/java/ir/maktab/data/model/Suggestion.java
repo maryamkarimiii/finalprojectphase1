@@ -20,12 +20,13 @@ public class Suggestion {
     Order CustomerOrder;
     @OneToOne
     Expert expert;
+    @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     Date createDate;
     Double price;
     @Temporal(TemporalType.DATE)
-    Date startWorking;
+    Date dateToWork;
     Duration duration;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;

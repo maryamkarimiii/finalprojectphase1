@@ -19,6 +19,4 @@ public class Comment {
     Customer customer;
     Integer score;
     String comment;
-    @Column(columnDefinition = "boolean default false")
-    boolean isDeleted;
 }

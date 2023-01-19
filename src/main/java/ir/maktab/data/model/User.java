@@ -22,17 +22,16 @@ public abstract class User {
     String lastName;
     @Column(unique = true, length = 11, nullable = false)
     String phoneNumber;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false,updatable = false)
     String email;
+    @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     Date registerDate;
     @OneToOne(cascade = CascadeType.ALL)
     Wallet wallet;
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     String username;
-    @Column(length = 8,nullable = false)
+    @Column(length = 8, nullable = false)
     String password;
-    @Column(columnDefinition = "boolean default false")
-    boolean isDeleted;
 }

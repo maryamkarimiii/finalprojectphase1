@@ -17,4 +17,6 @@ public class Expert extends User {
     @Lob
     byte[] image;
     Double expertTotalScore;
+    @Column(columnDefinition = "boolean default false")
+    boolean isDeleted;
 }
