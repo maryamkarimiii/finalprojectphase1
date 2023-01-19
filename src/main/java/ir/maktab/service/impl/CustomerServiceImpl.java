@@ -58,6 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> findAllCustomer() {
         return customerRepository.findAllCustomer();
     }
+
     public List<Service> seeServicesToChose() {
         return service.findAllEnableService();
     }

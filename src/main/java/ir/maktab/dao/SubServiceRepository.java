@@ -68,7 +68,7 @@ public class SubServiceRepository extends AbstractRepository<SubService> {
         TypedQuery<SubService> query = entityManager.createQuery(hqlQuery, SubService.class);
         query.setParameter("subServiceName", subServiceName);
         try {
-            SubService subService = query.getSingleResult();
+            query.getSingleResult();
             entityManager.getTransaction().commit();
             return true;
         } catch (NoResultException e) {

@@ -1,9 +1,7 @@
 package ir.maktab.dao;
 
 import ir.maktab.data.enums.ExpertRegistrationStatus;
-import ir.maktab.data.model.Customer;
 import ir.maktab.data.model.Expert;
-import ir.maktab.data.model.Service;
 import ir.maktab.exception.NotFoundException;
 
 import javax.persistence.EntityManager;
@@ -59,7 +57,7 @@ public class ExpertRepository extends AbstractRepository<Expert> {
         TypedQuery<Expert> query = entityManager.createQuery(hqlQuery, Expert.class);
         query.setParameter("email", email);
         try {
-            Expert expert = query.getSingleResult();
+            query.getSingleResult();
             entityManager.getTransaction().commit();
             return true;
         } catch (NoResultException e) {

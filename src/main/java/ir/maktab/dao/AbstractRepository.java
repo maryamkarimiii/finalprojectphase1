@@ -14,13 +14,6 @@ public abstract class AbstractRepository<T> implements CrudeRepository<T> {
             entityManager.persist(t);
             entityManager.getTransaction().commit();
         } catch (PersistenceException e) {
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
-            System.out.println(e.getLocalizedMessage());
-            System.out.println(e.getSuppressed());
-            System.out.println(e.getStackTrace());
-            System.out.println(e.fillInStackTrace());
-            System.out.println(e.getMessage());
             throw new DuplicationException("the entity is exist");
         } finally {
             entityManager.close();

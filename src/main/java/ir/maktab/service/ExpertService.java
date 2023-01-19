@@ -13,6 +13,8 @@ public interface ExpertService extends BaseService<Expert> {
     byte[] getExpertImageFromFile(String imagePath) throws IOException;
 
     boolean isExist(String email);
+
     void softDelete(Expert expert);
+
     List<Expert> findAllWithNewExpertRegistrationStatus();
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -18,7 +19,7 @@ public class Expert extends User {
     byte[] image;
     Double expertTotalScore;
     @ManyToMany
-    Set<SubService> subServiceSet;
+    List<SubService> subServiceSet;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;
 }

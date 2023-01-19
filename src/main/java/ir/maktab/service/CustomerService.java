@@ -12,6 +12,7 @@ public interface CustomerService extends BaseService<Customer> {
     void changePassword(String newPassword, Customer customer);
 
     List<Customer> findAllCustomer();
+
     List<Service> seeServicesToChose();
 
     List<SubService> seeSubServicesToChose(Service service);
