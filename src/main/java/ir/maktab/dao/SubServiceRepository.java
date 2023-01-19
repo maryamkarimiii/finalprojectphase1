@@ -64,7 +64,7 @@ public class SubServiceRepository extends AbstractRepository<SubService> {
     public boolean isExist(String subServiceName) {
         EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
         entityManager.getTransaction().begin();
-        String hqlQuery = "from SubService where name=:subServiceName and isDeleted=false";
+        String hqlQuery = "from SubService where name=:subServiceName";
         TypedQuery<SubService> query = entityManager.createQuery(hqlQuery, SubService.class);
         query.setParameter("subServiceName", subServiceName);
         try {

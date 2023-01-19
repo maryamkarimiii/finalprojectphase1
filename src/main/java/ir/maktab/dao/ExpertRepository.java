@@ -55,7 +55,7 @@ public class ExpertRepository extends AbstractRepository<Expert> {
     public boolean isExist(String email) {
         EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
         entityManager.getTransaction().begin();
-        String hqlQuery = "from Expert where email=:email and isDeleted=false ";
+        String hqlQuery = "from Expert where email=:email";
         TypedQuery<Expert> query = entityManager.createQuery(hqlQuery, Expert.class);
         query.setParameter("email", email);
         try {

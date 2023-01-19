@@ -51,7 +51,7 @@ public class ServiceRepository extends AbstractRepository<Service> {
     public boolean isExist(String serviceName) {
         EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
         entityManager.getTransaction().begin();
-        String hqlQuery = "from Service where name=:serviceName and isDeleted=false ";
+        String hqlQuery = "from Service where name=:serviceName";
         TypedQuery<Service> query = entityManager.createQuery(hqlQuery, Service.class);
         query.setParameter("serviceName", serviceName);
         try {

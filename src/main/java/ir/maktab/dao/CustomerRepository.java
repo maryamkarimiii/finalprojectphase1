@@ -37,7 +37,7 @@ public class CustomerRepository extends AbstractRepository<Customer> {
         }
     }
 
-    public List<Customer> findAllEnableCustomer() {
+    public List<Customer> findAllCustomer() {
         EntityManager entityManager = EntityManagerFactoryProducer.emf.createEntityManager();
         entityManager.getTransaction().begin();
         String hqlQuery = "from Customer";
