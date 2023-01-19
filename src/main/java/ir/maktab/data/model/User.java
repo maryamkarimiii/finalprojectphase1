@@ -24,14 +24,14 @@ public abstract class User {
     String phoneNumber;
     @Column(unique = true, nullable = false)
     String email;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     Date registerDate;
     @OneToOne(cascade = CascadeType.ALL)
     Wallet wallet;
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     String username;
-    @Column(length = 8)
+    @Column(length = 8,nullable = false)
     String password;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;

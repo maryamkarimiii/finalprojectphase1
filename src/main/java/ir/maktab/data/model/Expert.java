@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 public class Expert extends User {
     @Enumerated(EnumType.STRING)
-    ExpertRegistrationStatus expertRegistrationStatus = ExpertRegistrationStatus.NEW;
+    ExpertRegistrationStatus expertRegistrationStatus;
     @Lob
     byte[] image;
     Double expertTotalScore;

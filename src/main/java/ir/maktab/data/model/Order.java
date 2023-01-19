@@ -16,15 +16,15 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(unique = true)
-    Integer orderID;
     @OneToOne
     Customer customer;
     @OneToOne
     SubService subService;
     @OneToOne
     Expert expert;
+    @Column(nullable = false)
     String description;
+    @Column(nullable = false)
     Double price;
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)

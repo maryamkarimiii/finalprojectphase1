@@ -3,6 +3,7 @@ package ir.maktab.data.model;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -19,8 +20,11 @@ public class Suggestion {
     Order CustomerOrder;
     @OneToOne
     Expert expert;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     Date createDate;
     Double price;
+    @Temporal(TemporalType.DATE)
     Date startWorking;
     Duration duration;
     @Column(columnDefinition = "boolean default false")

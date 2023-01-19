@@ -14,7 +14,7 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     String name;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;
