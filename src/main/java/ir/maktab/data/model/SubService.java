@@ -13,9 +13,11 @@ public class SubService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(unique = true,nullable = false)
+    @Column(unique = true , nullable = false)
     String name;
+    @Column(nullable = false)
     Double baseAmount;
+    @Column(nullable = false)
     String description;
     @ManyToOne
     Service service;
