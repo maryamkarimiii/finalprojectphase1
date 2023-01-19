@@ -17,6 +17,8 @@ public class Expert extends User {
     @Lob
     byte[] image;
     Double expertTotalScore;
+    @ManyToMany
+    Set<SubService> subServiceSet;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;
 }

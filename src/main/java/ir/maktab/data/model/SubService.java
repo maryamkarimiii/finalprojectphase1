@@ -23,8 +23,7 @@ public class SubService {
     String description;
     @ManyToOne
     Service service;
-    @ToString.Exclude
-    @ManyToMany
+    @ManyToMany(mappedBy = "subServiceSet")
     Set<Expert> expertSet;
     @Column(columnDefinition = "boolean default false")
     boolean isDeleted;
